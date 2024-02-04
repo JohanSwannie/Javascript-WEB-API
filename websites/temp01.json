@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1957,
+    "firstName": "Johan",
+    "lastName": "Swan",
+    "position": "Software Developer"
+  },
+  {
+    "id": 1960,
+    "firstName": "Richard",
+    "lastName": "Swan",
+    "position": "Executive Chef"
+  },
+  {
+    "id": 1963,
+    "firstName": "Julie",
+    "lastName": "Swan",
+    "position": "Music Teacher"
+  }
+]
