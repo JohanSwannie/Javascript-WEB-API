@@ -3,7 +3,7 @@ const output2 = document.querySelector(".child1-sub-container2");
 const output3 = document.querySelector(".child2-sub-container1");
 const output4 = document.querySelector(".child2-sub-container2");
 const output5 = document.querySelector(".child3-sub-container1");
-const output6 = document.querySelector(".child4-sub-container2");
+const output6 = document.querySelector(".child3-sub-container2");
 const button1 = document.querySelector("#btn1");
 const button2 = document.querySelector("#btn2");
 const button3 = document.querySelector("#btn3");
@@ -229,8 +229,8 @@ const performResult5 = () => {
 
   const familyMembers = [familyMember1, familyMember2, familyMember3];
 
-  for (let key in familyMembers) {
-    console.log(`${familyMembers[key]}`);
+  for (let key of familyMembers) {
+    html5 += `<p>${key.fullName}</p>`;
   }
 
   const familyMember = {
@@ -246,41 +246,72 @@ const performResult5 = () => {
 
   for (let key in familyMember) {
     if (key === "location") {
-      console.log(` The ${key} is : `);
+      html5 += `<p> The ${key} is : </p>`;
       for (let key2 in familyMember["location"]) {
-        console.log(`${key2} - ${familyMember["location"][key2]}`);
+        html5 += `<p>${key2} - ${familyMember["location"][key2]}</p>`;
       }
     } else {
-      console.log(`${key} : ${familyMember[key]}`);
+      html5 += `<p>${key} : ${familyMember[key]}</p>`;
     }
   }
+  const person10 = {
+    title: "Doctor",
+    name: "James Mower",
+    location: "Cape Town",
+  };
+
+  const person11 = {
+    title: "Professor",
+    name: "Tommie Theron",
+    location: "Amsterdam",
+  };
+
+  const person12 = {
+    title: "President",
+    name: "Richard Bluetooth",
+    location: "New York",
+  };
+
+  const people = [person10, person11, person12];
+
+  for (const [key, value] of Object.entries(people)) {
+    html5 += `<p>${key} - ${value.title} - ${value.name} - ${value.location}</p>`;
+  }
+  output5.innerHTML = html5;
 };
-
-const person10 = {
-  title: "Doctor",
-  name: "James Mower",
-  location: "Cape Town",
-};
-
-const person11 = {
-  title: "Professor",
-  name: "Tommie Theron",
-  location: "Amsterdam",
-};
-
-const person12 = {
-  title: "President",
-  name: "Richard Bluetooth",
-  location: "New York",
-};
-
-const people = [person10, person11, person12];
-
-for (const [key, value] of Object.entries(people)) {
-  console.log(key);
-  console.log(value);
-}
 
 button5.onclick = () => {
   performResult5();
+};
+
+const performResult6 = () => {
+  let html6 = `<h1 class="heading">Result 6</h1>`;
+
+  const language1 = {
+    language: "JavaScript",
+  };
+
+  const language2 = {
+    language: "Python",
+  };
+
+  const language3 = {
+    language: "Kotlin",
+  };
+
+  const combinedLanguages = [language1, language2, language3];
+
+  const languagesStringed = JSON.stringify(combinedLanguages);
+
+  const languageParsed = JSON.parse(languagesStringed);
+
+  languageParsed.forEach((value) => {
+    html6 += `<p>${value.language}</p>`;
+  });
+
+  output6.innerHTML = html6;
+};
+
+button6.onclick = () => {
+  performResult6();
 };
