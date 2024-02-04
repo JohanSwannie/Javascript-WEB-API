@@ -256,6 +256,32 @@ const performResult5 = () => {
   }
 };
 
+const person10 = {
+  title: "Doctor",
+  name: "James Mower",
+  location: "Cape Town",
+};
+
+const person11 = {
+  title: "Professor",
+  name: "Tommie Theron",
+  location: "Amsterdam",
+};
+
+const person12 = {
+  title: "President",
+  name: "Richard Bluetooth",
+  location: "New York",
+};
+
+const people = [person10, person11, person12];
+
+console.log("END");
+for (const [key, value] of Object.entries(people)) {
+  console.log(key);
+  console.log(value);
+}
+
 button5.onclick = () => {
   performResult5();
 };
