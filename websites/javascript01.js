@@ -98,6 +98,18 @@ const performResult3 = () => {
 
   const persons = [person1, person2, person3];
 
+  persons[3] = {
+    title: "Miss",
+    name: "Mary Brown",
+    location: "Auckland",
+  };
+
+  persons[4] = {
+    title: "Mrs",
+    name: "Deborah Smith",
+    location: "Sydney",
+  };
+
   persons.forEach((person) => {
     html3 += `<p>${person.title} ${person.name} lives in ${person.location}</p>`;
   });
@@ -106,4 +118,67 @@ const performResult3 = () => {
 
 button3.onclick = () => {
   performResult3();
+};
+
+const performResult4 = () => {
+  let html4 = `<h1 class="heading">Result 4</h1>`;
+
+  const sportGroups = [
+    {
+      sport: "Tennis",
+      location: "Auckland",
+    },
+    {
+      sport: "Rugby",
+      location: "Wellington",
+    },
+    {
+      sport: "Netball",
+      location: "Christchruch",
+    },
+    {
+      sport: "Cricket",
+      location: "Dunedin",
+    },
+  ];
+
+  const allSports = [
+    sportGroups[0],
+    sportGroups[1],
+    sportGroups[2],
+    sportGroups[3],
+  ];
+
+  const moreSports = [
+    {
+      sport: "Swimming",
+      location: "Whitianga",
+    },
+    {
+      sport: "Horse Racing",
+      location: "Nelson",
+    },
+    {
+      sport: "Table Tennis",
+      location: "Tauranga",
+    },
+    {
+      sport: "Canoeing",
+      location: "Kaiteriteri",
+    },
+  ];
+
+  allSports.forEach((sportGroup) => {
+    html4 += `<p>${sportGroup.sport} will take place in ${sportGroup.location}</p>`;
+  });
+
+  for (let i = 0; i < moreSports.length; i++) {
+    html4 += `<p>${moreSports[i].sport} will take place in ${moreSports[i].location}</p>`;
+  }
+
+  output4.innerHTML = html4;
+};
+
+button4.onclick = () => {
+  performResult4();
 };
