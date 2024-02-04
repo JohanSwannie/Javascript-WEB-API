@@ -16,7 +16,6 @@ const url = "temp01.json";
 const retrieveData = (data) => {
   let html1 = `<h1 class="heading">Result 1</h1>`;
   data.forEach((person) => {
-    console.log(person);
     html1 += `<div>${person.firstName} ${person.lastName} --- ${person.position}</div>`;
     output.innerHTML = html1;
   });
@@ -168,16 +167,46 @@ const performResult4 = () => {
     },
   ];
 
+  html4 += `<h2>With forEach Loop</h2></br>`;
+
   allSports.forEach((sportGroup) => {
     html4 += `<p>${sportGroup.sport} will take place in ${sportGroup.location}</p>`;
   });
+
+  html4 += `</br><h2>With normal for loop</h2></br>`;
 
   for (let i = 0; i < moreSports.length; i++) {
     html4 += `<p>${moreSports[i].sport} will take place in ${moreSports[i].location}</p>`;
   }
 
+  html4 += `</br><h2>With for in Loop</h2></br>`;
+
+  for (let x in moreSports) {
+    html4 += `<p>${moreSports[x].sport} - ${moreSports[x].location}</p>`;
+  }
+
+  html4 += `</br><h2>With for of Loop</h2></br>`;
+
+  for (let x of moreSports) {
+    html4 += `<p>${x.sport}</p>`;
+  }
+
   output4.innerHTML = html4;
 };
+
+const firstName = ["Dennis", "Mary", "John", "Thomas"];
+const lastName = ["Dateling", "Brown", "Bland", "Cooper"];
+
+var nameObject = [];
+
+firstName.forEach((value, i) => {
+  nameObject[i] = {
+    firstName: value,
+    lastName: lastName[i],
+  };
+});
+
+console.log(nameObject);
 
 button4.onclick = () => {
   performResult4();
