@@ -276,7 +276,6 @@ const person12 = {
 
 const people = [person10, person11, person12];
 
-console.log("END");
 for (const [key, value] of Object.entries(people)) {
   console.log(key);
   console.log(value);
