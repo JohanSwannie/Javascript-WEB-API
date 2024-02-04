@@ -211,3 +211,51 @@ console.log(nameObject);
 button4.onclick = () => {
   performResult4();
 };
+
+const performResult5 = () => {
+  let html5 = `<h1 class="heading">Result 5</h1>`;
+
+  const familyMember1 = {
+    fullName: "Ivan Isherwood",
+  };
+
+  const familyMember2 = {
+    fullName: "Bertus Venter",
+  };
+
+  const familyMember3 = {
+    fullName: "James Mower",
+  };
+
+  const familyMembers = [familyMember1, familyMember2, familyMember3];
+
+  for (let key in familyMembers) {
+    console.log(`${familyMembers[key]}`);
+  }
+
+  const familyMember = {
+    fullName: "Petrus van den Berg",
+    age: 51,
+    hobby: "Fishing",
+    location: {
+      address1: "89 Bosbok Street",
+      address2: "De Aar",
+      address3: 7826,
+    },
+  };
+
+  for (let key in familyMember) {
+    if (key === "location") {
+      console.log(` The ${key} is : `);
+      for (let key2 in familyMember["location"]) {
+        console.log(`${key2} - ${familyMember["location"][key2]}`);
+      }
+    } else {
+      console.log(`${key} : ${familyMember[key]}`);
+    }
+  }
+};
+
+button5.onclick = () => {
+  performResult5();
+};
