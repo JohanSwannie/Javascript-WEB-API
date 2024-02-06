@@ -152,18 +152,30 @@ const performResult4 = () => {
     {
       sport: "Swimming",
       location: "Whitianga",
+      address: {
+        line1: "22 Punga Lane",
+      },
     },
     {
       sport: "Horse Racing",
       location: "Nelson",
+      address: {
+        line1: "34A Bull Street",
+      },
     },
     {
       sport: "Table Tennis",
       location: "Tauranga",
+      address: {
+        line1: "79 Whitebait Street",
+      },
     },
     {
       sport: "Canoeing",
       location: "Kaiteriteri",
+      address: {
+        line1: "33 Main Lane",
+      },
     },
   ];
 
@@ -176,19 +188,19 @@ const performResult4 = () => {
   html4 += `</br><h2>With normal for loop</h2></br>`;
 
   for (let i = 0; i < moreSports.length; i++) {
-    html4 += `<p>${moreSports[i].sport} will take place in ${moreSports[i].location}</p>`;
+    html4 += `<p>${moreSports[i].sport} will take place at ${moreSports[i].address["line1"]} in ${moreSports[i].location}</p>`;
   }
 
   html4 += `</br><h2>With for in Loop</h2></br>`;
 
   for (let x in moreSports) {
-    html4 += `<p>${moreSports[x].sport} - ${moreSports[x].location}</p>`;
+    html4 += `<p>${moreSports[x].sport} - ${moreSports[x].location} - ${moreSports[x].address["line1"]}</p>`;
   }
 
   html4 += `</br><h2>With for of Loop</h2></br>`;
 
   for (let x of moreSports) {
-    html4 += `<p>${x.sport}</p>`;
+    html4 += `<p>${x.sport} - ${x.address["line1"]}</p>`;
   }
 
   output4.innerHTML = html4;
